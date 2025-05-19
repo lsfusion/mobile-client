@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Client lsFusion (Capacitor)</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: sans-serif;
+        }
+
+        #bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 10;
+            display: flex;
+            padding: 8px;
+            background: #eee;
+        }
+
+        input {
+            flex: 1;
+            padding: 6px;
+            margin-right: 8px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 6px 12px;
+            font-size: 16px;
+        }
+
+        #viewer {
+            position: absolute;
+            top: 50px; /* Вышыня панэлі */
+            left: 0;
+            width: 100%;
+            height: calc(100% - 50px);
+            border: none;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+<div id="bar">
+    <input id="url" placeholder="Enter URL" value="http://127.0.0.1:8888/main" />
+    <button onclick="load()">Go</button>
+</div>
+<iframe id="viewer" src="http://127.0.0.1:8888/main"></iframe>
+
+<script>
+    function load() {
+        let val = document.getElementById('url').value;
+        if (!val.startsWith("http")) val = "http://" + val;
+        document.getElementById('viewer').src = val;
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+{
+  "appId": "org.lsfusion.capacitor",
+  "appName": "capacitor-browser",
+  "webDir": "www",
+  "server": {
+    "url": "http://192.168.0.51:8888",
+    "cleartext": true
+  }
+}
