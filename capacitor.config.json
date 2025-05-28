@@ -1,6 +1,6 @@
 {
   "appId": "org.lsfusion.capacitor",
-  "appName": "capacitor-browser",
+  "appName": "lsFusion mobile",
   "webDir": "www",
   "server": {
     "cleartext": true

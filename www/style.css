@@ -5,29 +5,44 @@ html, body {
     font-family: sans-serif;
 }
 
-#bar {
+#bar-handle {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    z-index: 10;
-    display: flex;
-    padding: 8px;
-    background: #eee;
+    height: 6px;
+    background: #ccc;
+    cursor: pointer;
+    z-index: 3;
 }
 
-input {
+#bar {
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    display: flex;
+    background: #eee;
+    height: 50px;
+}
+
+body.bar-visible #bar {
+    position: fixed;
+}
+
+#bar input {
     flex: 1;
-    padding: 6px;
     font-size: 16px;
+    border-radius: 8px; /* Вось гэтае правіла */
+    border: 1px solid #ccc; /* неабавязкова — для прыгажосці */
 }
 
 #viewer {
-    position: absolute;
-    top: 50px;
+    position: fixed;
+    top: 0;
     left: 0;
     width: 100%;
-    height: calc(100% - 50px);
+    height: 100%;
     border: none;
     z-index: 1;
 }

@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mobile Client lsFusion (Capacitor)</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
+<div id="bar-handle"></div>
 <div id="bar">
-    <input id="url" placeholder="Enter URL" list="url-history" onkeydown="handleKey(event)" />
+    <input id="url" placeholder="Enter URL" list="url-history" onkeydown="handleKey(event)"/>
     <datalist id="url-history"></datalist>
 </div>
 <iframe id="viewer"></iframe>
 
 <script>
+    const barHandle = document.getElementById('bar-handle');
     const urlInput = document.getElementById('url');
     const viewer = document.getElementById('viewer');
     const urlHistoryList = document.getElementById('url-history');
@@ -62,6 +64,13 @@
             loadUrl(urlInput.value.trim());
         }
     }
+
+    barHandle.addEventListener('click', () => {
+        if (document.body.classList.contains('bar-visible'))
+            document.body.classList.remove('bar-visible');
+        else
+            document.body.classList.add('bar-visible');
+    });
 </script>
 </body>
 </html>

@@ -4,7 +4,8 @@
     ```bash
     npm init -y
     npm install @capacitor/core @capacitor/cli
-    npx cap init capacitor-browser org.lsfusion.capacitor
+    npx cap init lsFusion mobile org.lsfusion.capacitor
+    npx @capacitor/assets generate --iconPath icon.png
     npm install @capacitor/android
     npx cap add android
     ```
